@@ -9,7 +9,8 @@ def main():
         """
         <style>
         body {
-            background: linear-gradient(to bottom, #0074D9, #1E90FF); 
+            background-image: url("https://cdn.britannica.com/84/73184-050-05ED59CB/Sunflower-field-Fargo-North-Dakota.jpg"); /* Replace with your flower image URL */
+            background-size: cover;
         }
         </style>
         """,
