@@ -24,7 +24,7 @@ def main():
     model = load_model()
     class_names = ["Daisy", "Dandelion", "Rose", "Sunflower", "Tulip"]
 
-    st.write("# 🌸Flower Type Classifier Developed By Jerome Marbebe")
+    st.write("# Flower Type Classifier Developed By Jerome Marbebe")
     st.write("### 🌼Daisy, 🌺Dandelion, 💐Tulips, 🌻Sunflower, 🥀Rose")
 
     file = st.file_uploader("Choose flower photo from computer", type=["jpg", "png", "jpeg"])
