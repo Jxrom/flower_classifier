@@ -17,7 +17,7 @@ def main():
         image = ImageOps.fit(image_data, size, Image.LANCZOS)
         img = np.asarray(image)
         img = cv2.resize(img, (128, 128), interpolation=cv2.INTER_NEAREST)
-        img_reshape = img.reshape((1,) + img.shape + (1,))
+        img_reshape = img.reshape((1, 128, 128, 3))
         prediction = model.predict(img_reshape)
         return prediction
 
