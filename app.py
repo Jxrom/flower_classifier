@@ -23,7 +23,7 @@ def main():
     class_names = ["Daisy", "Dandelion", "Rose", "Sunflower", "Tulip"]
 
     st.write("# 🌸Flower Type Classifier Developed By Jerome Marbebe")
-    st.write("# 🌼Daisy, 🌺Dandelion, 💐Tulips, 🌻Sunflower, 🥀Rose")
+    st.write("### 🌼Daisy, 🌺Dandelion, 💐Tulips, 🌻Sunflower, 🥀Rose")
 
     file = st.file_uploader("Choose plant photo from computer", type=["jpg", "png"])
 
