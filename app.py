@@ -14,6 +14,7 @@ def main():
     
     def import_and_predict(image_data, model):
         image = cv2.resize(image_data, (128, 128))
+        image = np.asarray(image)
         image = image / 255.0
         img_reshape = np.reshape(image, (1, 128, 128, 3))
         prediction = model.predict(img_reshape)
