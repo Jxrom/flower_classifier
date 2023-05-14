@@ -1,11 +1,10 @@
-import streamlit as st
 import tensorflow as tf
 from PIL import Image, ImageOps
 import numpy as np
 
 def main():
     st.title("Streamlit App")
-
+   
     @st.cache_resource
     def load_model():
         model = tf.keras.models.load_model('flower_classifier.hdf5')
@@ -18,12 +17,6 @@ def main():
         img_reshape = img[np.newaxis, ...]
         prediction = model.predict(img_reshape)
         return prediction
-
-    def calculate_accuracy(prediction, ground_truth):
-        predicted_class_index = np.argmax(prediction)
-        predicted_class_name = class_names[predicted_class_index]
-        accuracy = 100 if predicted_class_name == ground_truth else 0
-        return accuracy
 
     model = load_model()
     class_names = ["Daisy", "Dandelion", "Rose", "Sunflower", "Tulip"]
@@ -43,10 +36,6 @@ def main():
         class_name = class_names[class_index]
         string = "Flower Type: " + class_name
         st.success(string)
-
-        ground_truth = st.selectbox("Select the ground truth flower type:", class_names)
-        accuracy = calculate_accuracy(prediction, ground_truth)
-        st.write("Accuracy:", accuracy)
-
+ 
 if __name__ == "__main__":
     main()
