@@ -46,5 +46,6 @@ def main():
         class_name = class_names[class_index]
         string = "OUTPUT: " + class_name
         st.success(string)
- if __name__ == "__main__":
+ 
+if __name__ == "__main__":
     main()
