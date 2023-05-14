@@ -5,18 +5,7 @@ import numpy as np
 
 def main():
     st.title("Streamlit App")
-    st.markdown(
-        """
-        <style>
-        body {
-            background-image: url("https://cdn.britannica.com/84/73184-050-05ED59CB/Sunflower-field-Fargo-North-Dakota.jpg"); /* Replace with your flower image URL */
-            background-size: cover;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
+   
     @st.cache_resource
     def load_model():
         model = tf.keras.models.load_model('flower_classifier.hdf5')
@@ -33,7 +22,8 @@ def main():
     model = load_model()
     class_names = ["Daisy", "Dandelion", "Rose", "Sunflower", "Tulip"]
 
-    st.write("# Flower Type Classifier Developed By Jerome Marbebe")
+    st.write("# 🌸Flower Type Classifier Developed By Jerome Marbebe")
+    st.write("# 🌼Daisy, 🌺Dandelion, 💐Tulips, 🌻Sunflower, 🥀Rose)
 
     file = st.file_uploader("Choose plant photo from computer", type=["jpg", "png"])
 
