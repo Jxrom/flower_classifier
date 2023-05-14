@@ -2,6 +2,7 @@ import streamlit as st
 import tensorflow as tf
 from PIL import Image, ImageOps
 import numpy as np
+import cv2
 
 def main():
     st.title("Streamlit App")
@@ -10,12 +11,13 @@ def main():
     def load_model():
         model = tf.keras.models.load_model('flower_classifier.hdf5')
         return model
-
+    
     def import_and_predict(image_data, model):
         size = (128, 128)
         image = ImageOps.fit(image_data, size, Image.LANCZOS)
         img = np.asarray(image)
-        img_reshape = img[np.newaxis, ...]
+        img = cv2.resize(img, (128, 128), interpolation=cv2.INTER_NEAREST)
+        img_reshape = img.reshape((1,) + img.shape + (1,))
         prediction = model.predict(img_reshape)
         return prediction
 
