@@ -25,7 +25,7 @@ def main():
     st.write("# 🌸Flower Type Classifier Developed By Jerome Marbebe")
     st.write("### 🌼Daisy, 🌺Dandelion, 💐Tulips, 🌻Sunflower, 🥀Rose")
 
-    file = st.file_uploader("Choose plant photo from computer", type=["jpg", "png"])
+    file = st.file_uploader("Choose flower photo from computer", type=["jpg", "png"])
 
     if file is None:
         st.text("Please upload an image file")
