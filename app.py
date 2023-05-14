@@ -13,9 +13,8 @@ def main():
         return model
     
     def import_and_predict(image_data, model):
-        size = (128, 128)
-        image = cv2.resize(image_data, size)
-        img = img / 255.0
+        image = cv2.resize(image_data, (128, 128))
+        image = image / 255.0
         img_reshape = np.reshape(image, (1, 128, 128, 3))
         prediction = model.predict(img_reshape)
         return prediction
