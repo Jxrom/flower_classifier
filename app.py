@@ -37,6 +37,10 @@ def main():
         class_name = class_names[class_index]
         string = "Flower Type: " + class_name
         st.success(string)
+        
+        ground_truth = st.selectbox("Select the ground truth flower type:", class_names)
+        accuracy = calculate_accuracy(prediction, ground_truth)
+        st.write("Accuracy:", accuracy)
  
 if __name__ == "__main__":
     main()
